@@ -1,12 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomePage from './screens/HomePage';
+import Register from './componens/Register';
+import Login from './componens/Login';
+import RegistrationOfHoursByClient from './componens/RegistrationOfHoursByClient';
+import ViewingClientDocuments from './componens/ViewingClientDocuments';
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function HomeStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="HomePage" component={HomePage} />
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="RegistrationOfHoursByClient" component={RegistrationOfHoursByClient} />
+      <Stack.Screen name="ViewingClientDocuments" component={ViewingClientDocuments}/>
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeStack} />
+      </Tab.Navigator>
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
 
