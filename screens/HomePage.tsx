@@ -1,16 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/native';
 
 export default function HomePage() {
   const navigation = useNavigation();
+
   return (
     <SafeAreaView style={styles.container}>
       <View>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
           <Text style={styles.text}>Register Page</Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.text}>Login Page</Text>
         </TouchableOpacity>

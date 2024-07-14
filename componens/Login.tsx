@@ -7,7 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [storedUser, setStoredUser] = useState(null);
+  const [storedUser, setStoredUser] = useState<any>(null);
   const navigation = useNavigation();
 
   useEffect(() => {
