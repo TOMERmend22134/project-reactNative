@@ -3,6 +3,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import React from 'react';
 
 export default function Login() {
   const [userName, setUserName] = useState("");
